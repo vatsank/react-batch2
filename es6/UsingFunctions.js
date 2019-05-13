@@ -45,3 +45,5 @@ var Invoice = require('./Invoice');
  const result = Object.assign(target,source2,source);
 
  console.log(result);
+
+ 
