@@ -1,9 +1,9 @@
-class Book{
+export default class Book{
 
-    private bookNumber:number;
-    private bookName:string;
-    private author:string;
-    private ratePerUnit:number;
+    public bookNumber:number;
+    public bookName:string;
+    public author:string;
+    public ratePerUnit:number;
 
     constructor(bookNumber:number,bookName:string,author:string,ratePerUnit:number){
 
@@ -19,6 +19,5 @@ class Book{
     }
 }
 
-let es6 =new Book(101,"Mastering ES6",'ramesh',450.00);
+export const authorList = ['Siva',"Pavan","Shashi",'Magesh',"Mahi"];
 
-console.log(es6.toString());

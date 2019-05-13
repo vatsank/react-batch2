@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class Book {
     constructor(bookNumber, bookName, author, ratePerUnit) {
         this.bookNumber = bookNumber;
@@ -10,5 +11,5 @@ class Book {
         return `${this.bookName},${this.author}`;
     }
 }
-let es6 = new Book(101, "Mastering ES6", 'ramesh', 450.00);
-console.log(es6.toString());
+exports.default = Book;
+exports.authorList = ['Siva', "Pavan", "Shashi", 'Magesh', "Mahi"];
