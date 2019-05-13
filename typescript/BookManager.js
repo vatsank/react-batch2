@@ -5,6 +5,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const Book_1 = __importDefault(require("./Book"));
 const Book_2 = require("./Book");
+function printPublisher(publisher) {
+    console.log(publisher.phoneNumber);
+    console.log(publisher.publisherName);
+}
 function spreadArray(a, b, c, d, e) {
     console.log(a);
     console.log(b);
@@ -31,3 +35,4 @@ let es6 = new Book_1.default(101, "Mastering ES6", 'ramesh', 450.00);
 // console.log(authorList);
 // spreadLiteral(es6,authorList);
 spreadArray(...Book_2.authorList);
+printPublisher({ publisherName: 'Samba', phoneNumber: 9494949 });

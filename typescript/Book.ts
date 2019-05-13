@@ -1,9 +1,9 @@
 export default class Book{
 
-    public bookNumber:number;
-    public bookName:string;
-    public author:string;
-    public ratePerUnit:number;
+    private bookNumber:number;
+    private bookName:string;
+    private author:string;
+    private ratePerUnit:number;
 
     constructor(bookNumber:number,bookName:string,author:string,ratePerUnit:number){
 

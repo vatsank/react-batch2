@@ -1,14 +1,20 @@
+import { Publisher } from './Publisher';
 import Book from './Book';
 import {authorList} from './Book';
 
-function spreadArray(a:Book,b:Book,c:Book,d:Book,e:Book):void{
+function printPublisher(publisher:Publisher):void{
+
+    console.log(publisher.phoneNumber);
+    console.log(publisher.publisherName);
+}
+function spreadArray(
+     a:Book,b:Book,c:Book,d:Book,e:Book):void{
 
     console.log(a);
     console.log(b);
     console.log(c);
     console.log(d);
     console.log(e);
-    
 }
 function spreadLiteral(book:Book,authorList:string[]):void{
  
@@ -41,3 +47,5 @@ let es6 = new Book(101, "Mastering ES6", 'ramesh', 450.00);
 // spreadLiteral(es6,authorList);
 
 spreadArray(...authorList);
+
+printPublisher({publisherName:'Samba',phoneNumber:9494949});
