@@ -48,4 +48,5 @@ let es6 = new Book(101, "Mastering ES6", 'ramesh', 450.00);
 
 spreadArray(...authorList);
 
+const publisher:Publisher = {publisherName:'orilley',phoneNumber:49949,location:'mumbai'}
 printPublisher({publisherName:'Samba',phoneNumber:9494949});

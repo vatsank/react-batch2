@@ -35,4 +35,5 @@ let es6 = new Book_1.default(101, "Mastering ES6", 'ramesh', 450.00);
 // console.log(authorList);
 // spreadLiteral(es6,authorList);
 spreadArray(...Book_2.authorList);
+const publisher = { publisherName: 'orilley', phoneNumber: 49949, location: 'mumbai' };
 printPublisher({ publisherName: 'Samba', phoneNumber: 9494949 });
