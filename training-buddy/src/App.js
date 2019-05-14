@@ -4,6 +4,7 @@ import profilePicture from './images/profile.png';
 import AdminDashBoard from './AdminDashBoard/AdminDashBoard.react';
 import Profile from './Profile/Profile.react';
 import ShowCourse from './ShowCourse/ShowCourse.react';
+import TrainingDashBoard from './TrainingDashBoard/TrainingDashBoard.react';
 function App() {
 
   const user ={
@@ -13,11 +14,14 @@ function App() {
   return (
     <div className="App">
    
+    {/* 
       <AdminDashBoard></AdminDashBoard>
       <Profile imgRef={profilePicture} 
       points={5} level={3} user={user}></Profile>
 
-      <ShowCourse></ShowCourse>
+      <ShowCourse msg={'I am a prop'}></ShowCourse>*/}
+
+      <TrainingDashBoard></TrainingDashBoard>
     </div>
   );
 }

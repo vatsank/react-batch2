@@ -13,6 +13,8 @@ class ShowCourse extends React.Component {
 
     update = (state,props) =>{
 
+        console.log(state);
+        console.log(props);
         if(state.notNow >10){
             return null;
         } else { 
@@ -28,17 +30,17 @@ class ShowCourse extends React.Component {
       this.setState(this.update);
       
     }
-    increment = () =>{
+    increment = (event) =>{
+        console.log(event);
         this.setState({interested:this.state.interested+1});
     }
     render() {
         console.log('render Called');
         return (
             <div >
-            <p>Interested </p><span><h1>{this.state.interested}</h1></span>
             <p>Not Interested </p><span><h1>{this.state.notNow}</h1></span>
             
-              <Poll action={this.increment} text={"Interested"}></Poll>
+              <Poll action={this.increment} text={"Interested"} interested={this.state.interested}></Poll>
               <Poll action={this.notNow} text={"Not Now"}></Poll>
 
               </div>

@@ -1,0 +1,10 @@
+{
+
+    "calendar": [
+        { "id": 101, "courseName": "Spring Boot", "duration": "5 Days", "startDate": "20-May-2019" },
+        { "id": 102, "courseName": "React Redux", "duration": "4 Days", "startDate": "2-Jun-2019" },
+        { "id": 103, "courseName": "Advanced ReactJS", "duration": "3 Days", "startDate": "20-Jun-2019" },
+        { "id": 104, "courseName": "Sparc", "duration": "4 Days", "startDate": "20-May-2019" }
+
+    ]
+}
