@@ -11,12 +11,22 @@ class AdminDashBoard extends React.Component {
 
     render() {
         return (
-            <div >
-               <Heading majHeading={"Training Buddy"}></Heading>
-               <Content></Content>
-               <Footer designer={'Ramesh Info Systems'} 
-                        copyRight={"2019-2020"}></Footer>
-            </div>
+            <div className='container'>
+               <div className='row'>
+                    <Heading majHeading={"Training Buddy"}></Heading>
+               </div>
+                    <div className="row">
+                      <Content></Content>
+                    </div>
+                
+                <div className='row'>
+                    <Footer designer={'Ramesh Info Systems'} 
+                    copyRight={"2019-2020"}></Footer>
+                </div>
+                
+               </div>              
+             
+           
         );
     }
 }
