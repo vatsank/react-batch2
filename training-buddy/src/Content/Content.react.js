@@ -12,12 +12,15 @@ const rows =[
     ["ReactJS",500,200]
 ]
 const data = [columns,...rows];
+const myStyle ={
+     textAlign: 'center'
+};
 const Content = () => {
 
     return (
-        <div >
-          <h2>Trainings Conducted in 2018-19</h2>
-       <Chart chartType='BarChart'data ={data}></Chart>
+        <div>
+          <h2 style={myStyle}>Trainings Conducted in 2018-19</h2>
+       <Chart chartType='BarChart'data ={data} width="100%" height="400px" ></Chart>
         </div>
     );
 

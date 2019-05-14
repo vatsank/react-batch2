@@ -7,11 +7,13 @@ import Footer from '../Footer/Footer.react';
 class AdminDashBoard extends React.Component {
     constructor(props) {
         super(props);
+       
     }
 
-    render() {
+     render() {
         return (
             <div className='container'>
+            
                <div className='row'>
                     <Heading majHeading={"Training Buddy"}></Heading>
                </div>
@@ -23,7 +25,6 @@ class AdminDashBoard extends React.Component {
                     <Footer designer={'Ramesh Info Systems'} 
                     copyRight={"2019-2020"}></Footer>
                 </div>
-                
                </div>              
              
            
