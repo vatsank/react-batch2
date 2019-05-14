@@ -1,12 +1,16 @@
 import React from 'react';
+import logo from '../images/logo.jpg';
 
 
-
-const Heading = () => {
+const Heading = (props) => {
 
     return (
-        <div >
-          <h1>Training Buddy</h1>
+        <div>
+        <img src={logo} alt="Logo"/>
+          <h1>{props.majHeading}</h1>
+          <img src={'images/leftLogo.png'} 
+                      alt={"One more logo"}/>
+
         </div>
     );
 

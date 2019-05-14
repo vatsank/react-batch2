@@ -2,11 +2,12 @@ import React from 'react';
 
 
 
-const Footer = () => {
+const Footer = (props) => {
 
     return (
         <div >
-         <p>Designed by Ramesh Info Systems</p>
+         <p>{props.designer}</p>
+         <p>Copy Right - {props.copyRight}</p>
         </div>
     );
 
