@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../images/logo.jpg';
 import {Fragment} from 'react'
+import NavBar from '../NavBar/NavBar.react';
 
 const Heading = (props) => {
 
@@ -17,7 +18,9 @@ const Heading = (props) => {
         alt={"One more logo"} className='logo'/>
 
         </div>
-        
+        <div className='row'>
+        <NavBar></NavBar>
+        </div>
         </>
     );
 

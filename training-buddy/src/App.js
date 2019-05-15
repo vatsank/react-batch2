@@ -5,6 +5,8 @@ import AdminDashBoard from './AdminDashBoard/AdminDashBoard.react';
 import Profile from './Profile/Profile.react';
 import ShowCourse from './ShowCourse/ShowCourse.react';
 import TrainingDashBoard from './TrainingDashBoard/TrainingDashBoard.react';
+import MyRoutes from './MyRoutes/MyRoutes.react';
+import NavBar from './NavBar/NavBar.react';
 function App() {
 
   const user ={
@@ -14,6 +16,8 @@ function App() {
   return (
     <div className="App">
    
+    <MyRoutes></MyRoutes>
+
     {/* 
       <AdminDashBoard></AdminDashBoard>
       <Profile imgRef={profilePicture} 
@@ -21,7 +25,8 @@ function App() {
 
       <ShowCourse msg={'I am a prop'}></ShowCourse>*/}
 
-      <TrainingDashBoard></TrainingDashBoard>
+     {/*  <TrainingDashBoard></TrainingDashBoard> */}
+     
     </div>
   );
 }

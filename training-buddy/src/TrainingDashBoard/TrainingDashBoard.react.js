@@ -16,9 +16,9 @@ class TrainingDashBoard extends React.Component {
 
     update = (val) =>{
 
-        const update = [...this.state.trngList,val];
+        const updated = [...this.state.trngList,val];
 
-        this.setState({trngList:update})
+        this.setState({trngList:updated})
     }
 
     edit =(obj)=>{
