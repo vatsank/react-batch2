@@ -1,22 +1,28 @@
 {
-  "calendar": [
-    {
-      "id": 101,
-      "courseName": "Spring Boot",
-      "duration": "5 Days",
-      "startDate": "20-May-2019"
-    },
-    {
-      "id": 102,
-      "courseName": "React Redux",
-      "duration": "4 Days",
-      "startDate": "2-Jun-2019"
-    },
-    {
-      "id": "103",
-      "courseName": "Angular",
-      "duration": "5",
-      "startDate": "29-May-2019"
-    }
-  ]
+    "trainers": [
+        { "id": 201, "trainerName": "ramesh", "skillSet": "spring", "rating": 4.2 },
+        { "id": 202, "trainerName": "siva", "skillSet": "sparc", "rating": 4.1 },
+        { "id": 203, "trainerName": "rakesh", "skillSet": "react", "rating": 4.2 },
+        { "id": 204, "trainerName": "suresh", "skillSet": "python", "rating": 4.3 }
+
+    ],
+    "calendar": [{
+            "id": 101,
+            "courseName": "Spring Boot",
+            "duration": "5 Days",
+            "startDate": "20-May-2019"
+        },
+        {
+            "id": 102,
+            "courseName": "React Redux",
+            "duration": "4 Days",
+            "startDate": "2-Jun-2019"
+        },
+        {
+            "id": "103",
+            "courseName": "Angular",
+            "duration": "5",
+            "startDate": "29-May-2019"
+        }
+    ]
 }
