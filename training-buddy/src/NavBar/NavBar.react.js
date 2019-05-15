@@ -8,8 +8,12 @@ const NavBar = () => {
         <nav>
 
         <ul>
-            <li><Link exact to="/">Training</Link></li>
+
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/training">Training</Link></li>
             <li><Link to='/admin'>Administration</Link></li>
+            <li><Link to='/profile'>MyProfile</Link></li>
+            
         </ul>
         </nav>
     );

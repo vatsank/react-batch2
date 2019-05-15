@@ -13,10 +13,6 @@ class AdminDashBoard extends React.Component {
      render() {
         return (
             <div className='container'>
-            
-               <div className='row'>
-                    <Heading majHeading={"Training Buddy"}></Heading>
-               </div>
                     <div className="row">
                       <Content></Content>
                     </div>
