@@ -1,9 +1,11 @@
 import { createStore,combineReducers,applyMiddleware} from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import {createLogger} from 'redux-logger';
 import trainers from './restReducer'
 
 import thunk from 'redux-thunk';
 
+const logger = createLogger();
 const initialState = {text:'Hello World'}
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -19,6 +21,6 @@ const reducer = (state = initialState, action) => {
  const combined = combineReducers(
      {reducer:reducer,trainers:trainers}
  );
-const store = createStore(combined,composeWithDevTools(applyMiddleware(thunk)))
+const store = createStore(combined,composeWithDevTools(applyMiddleware(thunk,logger)))
 
 export default store

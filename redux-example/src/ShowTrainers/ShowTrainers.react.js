@@ -35,18 +35,36 @@ const ShowTrainers = (props) => {
 
 }
 
+// const mapStateToProps = (state) => {
+     
+//     selectTopTrainers(state);
+//     return {
+//         loadStatus: state.trainers.loaded,
+//         dataList:state.trainers.list
+//     }
+// }
+
+
 const mapStateToProps = (state) => {
-   
+     
+    selectTopTrainers(state);
     return {
         loadStatus: state.trainers.loaded,
-        dataList:state.trainers.list
+        dataList:selectTopTrainers(state)
     }
 }
+
 const  mapDispatchToProps = (dispatch, ownProps) => {
     return {
         get: () => {
             dispatch(fetchAllTrainers())
         }
     }
+}
+
+function selectTopTrainers(state){
+
+    console.log(state.trainers.list);
+   return state.trainers.list.filter(eachItem => eachItem.rating>4.1);
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ShowTrainers);
