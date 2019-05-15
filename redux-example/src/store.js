@@ -1,5 +1,8 @@
-import { createStore} from 'redux';
+import { createStore,combineReducers,applyMiddleware} from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import trainers from './restReducer'
+
+import thunk from 'redux-thunk';
 
 const initialState = {text:'Hello World'}
 const reducer = (state = initialState, action) => {
@@ -13,7 +16,9 @@ const reducer = (state = initialState, action) => {
     }
 }
 
- 
-const store = createStore(reducer,composeWithDevTools())
+ const combined = combineReducers(
+     {reducer:reducer,trainers:trainers}
+ );
+const store = createStore(combined,composeWithDevTools(applyMiddleware(thunk)))
 
 export default store

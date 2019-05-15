@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
    <h1>React- Redux Example</h1>
- {/*    <Greeter></Greeter> */}
+  <Greeter></Greeter> 
    <ShowTrainers></ShowTrainers>
     </div>
   );

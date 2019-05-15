@@ -17,7 +17,7 @@ export const Greeter = (props) => {
 }
 const mapStateToProps = (state) => {
     return {
-        txtmsg: state.text
+        txtmsg: state.reducer.text
     }
 }
 

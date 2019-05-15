@@ -25,8 +25,7 @@ export const fetchAllTrainers =()=>{
 
     return function(dispatch){
 
-        axios.get(url).then(resp=>dispatch(
-             {type:'FETCH_TRAINERS',list:resp.data,loaded:true}));
+        axios.get(url).then(resp=>dispatch(fetchTrainer(resp.data,true)));
     }
 }
 
@@ -35,13 +34,13 @@ const trainers = (state = initialState, action) => {
     switch (action.type) {
         case 'FETCH_TRAINERS':
             return action;
-         default:
+            // case 'BIRTHDAY':
+            //    return action;
+          default:
             return state
     }
 }
 
-// Store
-const reststore = createStore(trainers,composeWithDevTools(applyMiddleware(thunk)));
 
 
-export default reststore
+export default trainers;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchAllTrainers } from '../restStore';
+import { fetchAllTrainers } from '../restReducer';
 import {connect} from 'react-redux';
 
 
@@ -36,11 +36,10 @@ const ShowTrainers = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state.loaded);
-    console.log(state);
+   
     return {
-        loadStatus: state.loaded,
-        dataList:state.list
+        loadStatus: state.trainers.loaded,
+        dataList:state.trainers.list
     }
 }
 const  mapDispatchToProps = (dispatch, ownProps) => {
