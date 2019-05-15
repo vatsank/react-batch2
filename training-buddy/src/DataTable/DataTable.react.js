@@ -1,24 +1,23 @@
 import React from 'react';
 
-let value =50;
 const over = (event) =>{
 
    const ele = event.target;
    ele.style.fontSize = '1.2em';
 
-    value+=50;
-   console.log(value);
 }
 
 const out = (event) =>{
 
     const ele = event.target;
     ele.style.fontSize = '';
-    value-=10;
  }
 const DataTable = (props) => {
 
     const [first] = props.data;
+
+
+    console.log(props.onemore);
 
    if(!first){
     
@@ -34,6 +33,9 @@ const DataTable = (props) => {
                  <td>{eachValue.courseName}</td>
                  <td>{eachValue.duration}</td>
                  <td>{eachValue.startDate}</td>
+                 <td><button onClick={e =>props.action(eachValue)} className='btn btn-danger'>Delete</button></td>
+                 <td><button onClick={e =>props.onemore(eachValue)} className='btn btn-info'>Edit</button></td>
+                 
                 </tr>
 
                 )

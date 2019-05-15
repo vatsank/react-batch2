@@ -18,16 +18,22 @@ class AddToCalendar extends React.Component {
     }
 
     handleChange = (event) =>{
-     console.log(event);
+  
         let value = event.target.value;
         let name = event.target.name;
 
+      
         this.setState( prevState => ({ newCalendar : 
             {...prevState.newCalendar, [name]: value  }
         }
         ));
-        
     }
+
+    update = (prevState,event) =>{
+
+        return {newCalendar:{...prevState.newCalendar,[event.target.name]:event.target.value}}
+    }
+   
     url = "http://localhost:4000/calendar";
     handleSubmit = (event) =>{
 
@@ -37,11 +43,12 @@ class AddToCalendar extends React.Component {
             method:'POST',
             body:JSON.stringify(this.state.newCalendar),
             headers:{'Content-Type':'application/json'}
-        });
+        }).then(res => res.json()).then(data => this.props.action(data));
     }
 
     render() {
         return (
+            <div className='col-md-6'>
             <form className='form' onSubmit={this.handleSubmit}>
       
             <div className='form-group'>
@@ -64,7 +71,7 @@ class AddToCalendar extends React.Component {
             <div>
               <input type="submit" value="Add" className='btn btn-info'/></div>
             </form>
-
+            </div>
             
         );
     }

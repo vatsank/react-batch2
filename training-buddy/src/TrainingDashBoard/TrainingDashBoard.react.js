@@ -7,12 +7,40 @@ import AddToCalendar from '../AddToCalendar/AddToCalendar.react';
 class TrainingDashBoard extends React.Component {
     constructor(props) {
         super(props);
-
+      
         this.state = {
 
             trngList : []
         }
     }
+
+    update = (val) =>{
+
+        const update = [...this.state.trngList,val];
+
+        this.setState({trngList:update})
+    }
+
+    edit =(obj)=>{
+
+        console.log(obj);
+    }
+    delete =(obj)=>{
+
+        var array =[...this.state.trngList];
+        var index = array.indexOf(obj);
+        array.splice(index,1);
+        const url = this.url+'/'+obj.id;
+
+        fetch(url, {
+            method:"DELETE"
+        }).then(res=> res.json()).then(data => {
+            console.log('one resource removed')
+            this.setState({trngList:array});
+        });
+
+    }
+    
 
     url = "http://localhost:4000/calendar";
     componentDidMount(){
@@ -27,7 +55,7 @@ class TrainingDashBoard extends React.Component {
     render() {
         return (
             <React.Fragment>
-            <AddToCalendar></AddToCalendar>
+            <AddToCalendar action={this.update} ></AddToCalendar>
             <table className='table table-striped'>
             <thead>
             <tr>
@@ -37,7 +65,7 @@ class TrainingDashBoard extends React.Component {
               </tr>
               </thead>
             <tbody>
-             <DataTable data={this.state.trngList}></DataTable>
+             <DataTable data={this.state.trngList} action={this.delete}></DataTable>
             </tbody>
               </table>
               </React.Fragment>

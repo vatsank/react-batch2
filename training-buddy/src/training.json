@@ -13,22 +13,10 @@
       "startDate": "2-Jun-2019"
     },
     {
-      "id": 103,
-      "courseName": "Advanced ReactJS",
-      "duration": "3 Days",
-      "startDate": "20-Jun-2019"
-    },
-    {
-      "id": 104,
-      "courseName": "Sparc",
-      "duration": "4 Days",
-      "startDate": "20-May-2019"
-    },
-    {
-      "id": "106",
-      "courseName": "Spring",
-      "duration": "5",
-      "startDate": "12-10-2019"
+      "id": "450",
+      "courseName": "REST",
+      "duration": "3",
+      "startDate": "20-10-2019"
     }
   ]
 }
