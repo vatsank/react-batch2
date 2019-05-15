@@ -43,4 +43,5 @@ const trainers = (state = initialState, action) => {
 // Store
 const reststore = createStore(trainers,composeWithDevTools(applyMiddleware(thunk)));
 
+
 export default reststore

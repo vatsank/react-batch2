@@ -25,6 +25,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         birthday: () => {
             dispatch({type:'BIRTHDAY',text:'Happy Birthday'});
+            
         },
         weddingday:()=>{
             dispatch({type:'WEDDINGDAY',text:'Happy Anniversary'})

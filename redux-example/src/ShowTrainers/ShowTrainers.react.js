@@ -14,18 +14,22 @@ const ShowTrainers = (props) => {
         )
     } else {
     return (
-      
         props.dataList.map((value)=>{
 
             return(
-            <div key={value.id}>
-              <div>{value.trainerName}</div>
-              <div>{value.skillSet}</div>
-              <div>{value.rating}</div>
+            
+            <div key={value.id} className="card col-md-4">
+              <div className='card-header'>{value.trainerName}</div>
+              <div className='card-body'>
+              <div className='card-title'>{value.skillSet}</div>
+              </div>
+              <div className='card-footer'>{value.rating}</div>
               
             </div>
             )
+          
         })
+       
     )
     }
 
