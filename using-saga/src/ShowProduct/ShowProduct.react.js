@@ -1,6 +1,5 @@
 import React from 'react';
-
-
+import {connect} from 'react-redux';
 
 const ShowProduct = (props) => {
 
@@ -31,4 +30,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(ShowProduct)
+export default connect(mapStateToProps, mapDispatchToProps)(ShowProduct)
