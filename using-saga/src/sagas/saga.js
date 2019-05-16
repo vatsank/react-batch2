@@ -1,15 +1,29 @@
-import {takeEvery,put,takeLatest,delay} from 'redux-saga/effects'; 
+import {takeEvery,put,takeLatest,take,delay} from 'redux-saga/effects'; 
 
 
-function* addItemAsync(){
+function* addItemAsync(value){
 
     yield delay(2000); 
-	yield put({type:'ADD_ITEM_ASYNC',value:1})
+	yield put({type:'ADD_ITEM_ASYNC',value:value})
+
+}
+
+function* subItemAsync(){
+
+	yield put({type:'SUB_ITEM_ASYNC',value:1})
 
 }
 function* watchItems(){
 
-    yield takeLatest('ADD_ITEM',addItemAsync);
+   // yield takeLatest('ADD_ITEM',addItemAsync);
+
+   const frmView = yield take('ADD_ITEM');
+
+         let  value =   frmView.value;
+
+         yield takeLatest('ADD_ITEM',()=> addItemAsync(value));
+
+     yield takeEvery('SUB_ITEM',subItemAsync);
 
 }
 
