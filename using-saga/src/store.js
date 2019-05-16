@@ -6,7 +6,8 @@ import {createLogger} from 'redux-logger';
 const logger  = createLogger();
 
 const nameInitialState = {
-    itemCount:1
+    itemCount:1,
+    users:[{name:'Ramesh'}]
 }
 const reducer = (state = nameInitialState, action) => {
 
@@ -18,9 +19,14 @@ const reducer = (state = nameInitialState, action) => {
         case "SUB_ITEM_ASYNC":
                 newState.itemCount-=action.value;
                 break;
+         case "FETCH_USER_ASYNC":
+                console.log(action.list);
+                newState.users =action.list
+                break;
                 default:
                  newState =state;
              }
+            
            return newState
 }
 
