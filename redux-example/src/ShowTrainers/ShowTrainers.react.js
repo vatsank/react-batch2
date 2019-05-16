@@ -1,6 +1,7 @@
 import React from 'react';
 import { fetchAllTrainers } from '../restReducer';
 import {connect} from 'react-redux';
+import { createSelector } from 'reselect';
 
 
 const ShowTrainers = (props) => {
@@ -37,20 +38,29 @@ const ShowTrainers = (props) => {
 
 // const mapStateToProps = (state) => {
      
-//     selectTopTrainers(state);
+//    
 //     return {
 //         loadStatus: state.trainers.loaded,
 //         dataList:state.trainers.list
 //     }
 // }
 
+// const mapStateToProps = (state) => {
+     
+    
+//     return {
+//         loadStatus: state.trainers.loaded,
+//         dataList:selectTopTrainers(state)
+//     }
+// }
 
 const mapStateToProps = (state) => {
      
-    selectTopTrainers(state);
+    
     return {
         loadStatus: state.trainers.loaded,
-        dataList:selectTopTrainers(state)
+        dataList:topRated(state),
+        dataList2:lowRated(state)
     }
 }
 
@@ -62,9 +72,21 @@ const  mapDispatchToProps = (dispatch, ownProps) => {
     }
 }
 
-function selectTopTrainers(state){
+// function selectTopTrainers(state){
 
-    console.log(state.trainers.list);
-   return state.trainers.list.filter(eachItem => eachItem.rating>4.1);
-}
+//    return state.trainers.list.filter(eachItem => eachItem.rating<=4.1);
+// }
+
+const trainerSelector = state => state.trainers.list;
+
+export const topRated = createSelector([trainerSelector], list => {
+    return list.filter(eachItem => eachItem.rating>4.1);
+  });
+
+  export const lowRated = createSelector([trainerSelector], list => {
+    return list.filter(eachItem => eachItem.rating<=4.1);
+  });
+
+  
+
 export default connect(mapStateToProps, mapDispatchToProps)(ShowTrainers);

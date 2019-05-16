@@ -1,6 +1,7 @@
 import { createStore,combineReducers,applyMiddleware} from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import {createLogger} from 'redux-logger';
+import {reducer as formReducer} from 'redux-form';
 import trainers from './restReducer'
 
 import thunk from 'redux-thunk';
@@ -19,7 +20,7 @@ const reducer = (state = initialState, action) => {
 }
 
  const combined = combineReducers(
-     {reducer:reducer,trainers:trainers}
+     {reducer:reducer,trainers:trainers,form:formReducer}
  );
 const store = createStore(combined,composeWithDevTools(applyMiddleware(thunk,logger)))
 
