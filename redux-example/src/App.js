@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState,useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
@@ -8,13 +8,20 @@ import AddTrainer from './AddTrainer/AddTrainer.react';
 import  {BrowserRouter,Route,Link,Switch} from 'react-router-dom';
 import axios from 'axios'
 
-const postToServer = (values)=>{
- console.log(values);
 
- axios.post('http://localhost:4000/trainers',values).then(res =>console.log('one trainer Added'));
-}
+
 
 function App() {
+
+  const postToServer = (values)=>{
+    console.log(values);
+   
+    axios.post('http://localhost:4000/trainers',values).then(
+      res =>setInfo('one Trainer Added'));
+   }
+
+  const [info, setInfo] = useState('Add Values in The Form');
+
   return (
     <div className="App">
    <h1>React- Redux Example</h1>
@@ -35,7 +42,7 @@ function App() {
     <Route path='/home' component={Greeter}/>
     <Route path='/show' component={ShowTrainers}/>
     <Route path='/add'
-      render={ () =><AddTrainer onSubmit={postToServer}></AddTrainer>}/>
+      render={ () =><AddTrainer onSubmit={postToServer} info={info}></AddTrainer>}/>
 
     </Switch>
    </BrowserRouter>

@@ -8,6 +8,11 @@ class AdminDashBoard extends React.Component {
     constructor(props) {
         super(props);
        
+        let userStatus = sessionStorage.getItem('logged');
+
+        if(userStatus !== 'yes'){
+            props.history.push('/')
+        }
     }
 
      render() {

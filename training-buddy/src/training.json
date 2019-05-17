@@ -71,6 +71,12 @@
       "trainerName": "Umesh",
       "skilSet": "Java",
       "rating": "4.2"
+    },
+    {
+      "id": "899",
+      "trainerName": "Ganesh",
+      "skilSet": "dotnet",
+      "rating": "4.5"
     }
   ],
   "calendar": [

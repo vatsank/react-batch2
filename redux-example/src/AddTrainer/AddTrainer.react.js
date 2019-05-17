@@ -1,8 +1,9 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import {Field,reduxForm} from 'redux-form';
 import {validate} from '../validate';
 
 const RenderField = (props) => {
+
     const {input,type,meta:{touched,error,warning}} = props
     return (
         <div>
@@ -23,6 +24,7 @@ const AddTrainer = (props) => {
     const {handleSubmit}  =props
     return (
         <div >
+        <p>{props.info}</p>
         <form onSubmit={handleSubmit}>
      
           <div>

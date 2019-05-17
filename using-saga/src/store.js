@@ -10,7 +10,6 @@ const nameInitialState = {
     users:[{name:'Ramesh'}]
 }
 const reducer = (state = nameInitialState, action) => {
-
     let newState ={...state}
     switch (action.type) {
         case 'ADD_ITEM_ASYNC':
