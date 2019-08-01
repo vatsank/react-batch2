@@ -1,19 +1,23 @@
 import React,{useState} from 'react';
 import { Redirect } from 'react-router-dom';
+import SelectButton from '../SelectButton/SelectButton.react';
 
 const LoginPage = (props) => {
 
+  const items ={name:'userRole',optionsList:[{optValue:"CHN",dispValue:"Chennai"},{optValue:"SBC",dispValue:"Bangalore"}]};
     const [formData,setValues] = useState({
         userName:'',
-        passWord:''
+        passWord:'',
+        "role":''
     });
 
     const handleSubmit = (event) =>{
 
         event.preventDefault();
-  const  {userName,passWord} = formData;
+        console.log(formData);
+  const  {userName,passWord,role} = formData;
 
-      if(userName ==='india' && passWord ==='india'){
+      if(userName ==='india' && passWord ==='india' && role === 'admin'){
 
         sessionStorage.setItem('logged','yes');
         
@@ -44,7 +48,9 @@ const LoginPage = (props) => {
                   value={formData.passWord}
                  onChange={handleChange}/>
             </div>
-            
+            <label htmlFor="">Role</label>
+
+            <SelectButton items={items} action={handleChange}></SelectButton>
             <div>
                  <button type='submit'>Login</button>
             </div>
