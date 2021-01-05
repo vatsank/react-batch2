@@ -10,7 +10,7 @@
         "redux": "^4.0.1",
         "react-redux": "^7.0.3",
         "redux-logger": "^3.0.6",
-        "axios": "^0.18.0"
+        "axios": "^0.21.1"
     },
     "scripts": {
         "start": "react-scripts start",
